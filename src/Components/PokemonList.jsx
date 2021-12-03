@@ -3,7 +3,7 @@ import React from 'react'
 export default function PokemonList({ pokeList }) {
     return (
         <div>
-            {pokeList.map(poke => <li key={pokeList.indexOf(poke)}><p>{poke.pokemon}</p>
+            {pokeList.map(poke => <li key={pokeList.indexOf(poke)} style={{listStyleType: 'none'}}> <p> Name: {poke.pokemon}</p>
             <img src={poke.image} alt={poke.pokemon}></img>
             <p>HP: {poke.hp}</p>
             <p> Height: {poke.height}</p>

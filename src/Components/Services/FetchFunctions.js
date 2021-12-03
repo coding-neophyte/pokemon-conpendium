@@ -8,15 +8,26 @@ export const fetchPokemon = async () => {
 export const fetchPokemonType = async () => {
     const res = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex/types')
     const pokemonType = await res.json();
-    return pokemonType.type
+    return pokemonType.map(type => type.type);
 }
 
 
 export const searchPokemon = async (pokemon) => {
     const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${pokemon}`)
     const searchedPokemon = await res.json()
-    return searchedPokemon.results
+    return searchedPokemon.results.map(pokemon => pokemonMunge(pokemon))
 }
+
+export const fetchFilterPokemon = async(type) =>{
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?type=${type}`)
+    const filteredPokemon = await res.json()
+    return filteredPokemon.results.map(pokemon => pokemonMunge(pokemon))
+
+}
+
+// export const sortPokemon = async () => {
+//     const res = await fetch()
+// }
 
 
 
