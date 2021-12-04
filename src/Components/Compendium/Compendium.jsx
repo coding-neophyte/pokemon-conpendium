@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { fetchFilterPokemon, fetchPokemon, fetchPokemonType, searchPokemon } from './Services/FetchFunctions'
-import PokemonList from './PokemonList'
-import PokemonForm from './PokemonForm'
-import PokemonFilter from './PokemonFilter'
+import { fetchFilterPokemon, fetchPokemon, fetchPokemonType, searchPokemon, sortThePokemon } from '../Services/FetchFunctions'
+import PokemonList from '../List/PokemonList'
+import PokemonForm from '../Form/PokemonForm'
+import PokemonFilter from '../Filter/PokemonFilter'
+import PokemonSort from '../Sort/PokemonSort'
 
 export default function Compendium() {
     const [isLoading, setIsLoading] = useState(true)
@@ -11,6 +12,7 @@ export default function Compendium() {
     const [pokemonType, setPokemonType] = useState([])
     const [nameSearched, setNameSearched] = useState('')
     const [selectedType, setSelectedType] = useState('all')
+    const [sortPokemon, setSortPokemon] = useState('asc')
 
 
     useEffect(() => {
@@ -49,6 +51,15 @@ export default function Compendium() {
     }
     }, [selectedType])
 
+    useEffect(() => {
+        const sortAllPokemon = async () =>{
+            console.log(sortPokemon)
+            const directionalSort = await sortThePokemon(sortPokemon, selectedType)
+            setPokemon(directionalSort)
+        }
+        sortAllPokemon()
+    }, [sortPokemon, selectedType])
+
     const handleSubmit = async (e) =>{
         e.preventDefault();
         setIsLoading(true);
@@ -68,6 +79,7 @@ export default function Compendium() {
             <PokemonForm handleSubmit={handleSubmit} handleSearch={setNameSearched}
             pokemonName={nameSearched}/>
             <PokemonFilter pokeTypes={pokemonType} typeSelected={selectedType} setSelectedType={setSelectedType} />
+            <PokemonSort setSortPokemon={setSortPokemon} sortPokemon ={sortPokemon}/>
             <PokemonList pokeList={pokemon}/>
 
         </div>

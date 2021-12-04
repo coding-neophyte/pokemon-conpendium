@@ -25,9 +25,13 @@ export const fetchFilterPokemon = async(type) =>{
 
 }
 
-// export const sortPokemon = async () => {
-//     const res = await fetch()
-// }
+export const sortThePokemon = async (sortedPokemon, type) => {
+    const res = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?type=${type}&sort=pokemon&direction=${sortedPokemon}`)
+
+    const pokeSort = await res.json()
+
+    return pokeSort.results.map(pokemon => pokemonMunge(pokemon))
+}
 
 
 

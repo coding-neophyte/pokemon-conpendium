@@ -1,5 +1,5 @@
 import './App.css';
-import Compendium from './Components/Compendium';
+import Compendium from './Components/Compendium/Compendium';
 
 
 function App() {
