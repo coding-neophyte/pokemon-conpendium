@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test pokemon sort 1`] = `
+<div>
+  <div>
+    <select>
+      <option
+        value="asc"
+      >
+        ASC
+      </option>
+      <option
+        value="desc"
+      >
+        DSC
+      </option>
+    </select>
+  </div>
+</div>
+`;

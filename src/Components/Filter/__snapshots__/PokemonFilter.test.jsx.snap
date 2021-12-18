@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render filter component 1`] = `
+<select
+  aria-label="dropDown"
+>
+  <option
+    value="all"
+  >
+    All
+  </option>
+  <option
+    value="pikachu"
+  >
+    pikachu
+  </option>
+  <option
+    value="mew"
+  >
+    mew
+  </option>
+</select>
+`;

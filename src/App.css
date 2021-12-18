@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,71 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1{
+  color: #16C2F5;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+li{
+  border-style: solid;
+  border-color: #16C2F5;
+  width: 22%;
+  height: 22%;
+  float: left;
+  border-radius: 10px;
+  margin-left: 25px;
+  margin-top: 10px;
+  background-color: #16C2F5;
+  font-family: 'Alfa Slab One', cursive;
+  color: #F7F468;
+}
+
+img{
+  height: 150px;
+}
+.pokeName{
+  font-family: 'Alfa Slab One', cursive;
+  color: #F7F468;
+  font-size: 25px;
+}
+
+html{
+  background-color: #F7F468;
+}
+
+label{
+  color: #16C2F5;
+  font-weight: bold;
+}
+
+input{
+  height: 23px;
+}
+
+select{
+  background-color: #16C2F5;
+  color: #F7F468;
+  height: 25px;
+  padding: 2px;
+  border-radius: 5px;
+  width: 100px;
+  font-weight: bold;
+}
+button{
+  background-color: #16C2F5;
+  border-radius: 5px;
+  color: #F7F468;
+  height: 30px;
+  width: 80px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  border: none;
+}
+
+
+button:hover{
+  background-color: #2E6575;
+
 }
